@@ -1,23 +1,23 @@
 package com.shop.controller;
 
-
-import com.shop.dto.ItemDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.shop.dto.ItemDto;
 import java.time.LocalDateTime;
+
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = "/thymeleaf")
+@RequestMapping(value="/thymeleaf")
 public class ThymeleafExController {
 
     @GetMapping(value = "/ex01")
     public String thymeleafExample01(Model model){
-        model.addAttribute("data", "타임리프 예제입니다.");
+        model.addAttribute("data", "타임리프 예제 입니다.");
         return "thymeleafEx/thymeleafEx01";
     }
 
@@ -42,8 +42,8 @@ public class ThymeleafExController {
 
             ItemDto itemDto = new ItemDto();
             itemDto.setItemDetail("상품 상세 설명"+i);
-            itemDto.setItemNm("테스트 상품"+i);
-            itemDto.setPrice(10000*i);
+            itemDto.setItemNm("테스트 상품" + i);
+            itemDto.setPrice(1000*i);
             itemDto.setRegTime(LocalDateTime.now());
 
             itemDtoList.add(itemDto);
@@ -62,8 +62,8 @@ public class ThymeleafExController {
 
             ItemDto itemDto = new ItemDto();
             itemDto.setItemDetail("상품 상세 설명"+i);
-            itemDto.setItemNm("테스트 상품"+i);
-            itemDto.setPrice(10000*i);
+            itemDto.setItemNm("테스트 상품" + i);
+            itemDto.setPrice(1000*i);
             itemDto.setRegTime(LocalDateTime.now());
 
             itemDtoList.add(itemDto);
@@ -89,4 +89,5 @@ public class ThymeleafExController {
     public String thymeleafExample07(){
         return "thymeleafEx/thymeleafEx07";
     }
+
 }
